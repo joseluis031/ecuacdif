@@ -33,3 +33,16 @@ def ecuacion3():
     print("Su solucion:",solucion3)
 
 ecuacion3()
+
+def ecuacion4():
+    d = y(x).diff(x)
+    ec4 = (3*x**2 + y(x))/2*x
+    a4 =sp.Eq(d, ec4)
+    print("La ecuacion 4 es:", a4)
+    solucion4 = sp.dsolve(d-ec4)
+    print("Su solucion:",solucion4)
+    
+ecuacion4()    
+   
+
+ 
