@@ -1,4 +1,5 @@
 import sympy as sp
+import math
 x = sp.Symbol("x")
 y = sp.Function("y")
 
@@ -24,7 +25,7 @@ class Ecuacion1:
         ics = {y(3): -1}
         cond_in = sp.Eq(solucion.lhs.subs(x, 3).subs(ics), solucion.rhs.subs(x, 3))
         print("Despejando la condicion inicial:", cond_in)
-        resolucion = sp.solve(cond_in)
+        resolucion = sp.solve(self.a1,y(x),ics = {y(3): -1})
         print("Resolviendo con la condicion inicial:",resolucion)
         
 sol1 = Ecuacion1(x,y,a)
@@ -47,7 +48,12 @@ class Ecuacion2:
         
         solucion2 = sp.dsolve(a-self.ec2)
         print("Su solucion:",solucion2)
-    
+        ics = {y(math.pi/2): math.e}
+        cond_in = sp.Eq(solucion2.lhs.subs(x, 0).subs(ics), solucion2.rhs.subs(x, 0))
+        print("Despejando la condicion inicial:", cond_in)
+        resolucion = sp.solve(cond_in)
+        print("Resolviendo con la condicion inicial:",resolucion)
+
 sol2 = Ecuacion2(x,y,a)
 print(sol2)
 sol2.resolver()
