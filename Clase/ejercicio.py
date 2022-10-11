@@ -21,7 +21,12 @@ class Ecuacion1:
         
         solucion = sp.dsolve(a-self.ec1) #resolver ecuacion
         print("Su solucion:",solucion)
-    
+        ics = {y(3): -1}
+        cond_in = sp.Eq(solucion.lhs.subs(x, 3).subs(ics), solucion.rhs.subs(x, 3))
+        print("Despejando la condicion inicial:", cond_in)
+        resolucion = sp.solve(cond_in)
+        print("Resolviendo con la condicion inicial:",resolucion)
+        
 sol1 = Ecuacion1(x,y,a)
 print(sol1)
 sol1.resolver()
@@ -48,7 +53,6 @@ print(sol2)
 sol2.resolver()
 
 
-
 class Ecuacion3():
     def __init__(self,x,y,a):
         self.x = x
@@ -68,7 +72,6 @@ class Ecuacion3():
 sol3 = Ecuacion3(x,y,a)
 print(sol3)
 sol3.resolver()
-
 
 
 class Ecuacion4:
