@@ -22,7 +22,7 @@ class Ecuacion1:
         solucion = sp.dsolve(a-self.ec1) #resolver ecuacion
         print("Su solucion:",solucion)
     
-sol1 = Ecuacion1
+sol1 = Ecuacion1(x,y,a)
 print(sol1)
 sol1.resolver()
 
