@@ -1,5 +1,6 @@
 import sympy as sp
 import math
+import pprint
 x = sp.Symbol("x")
 y = sp.Function("y")
 
