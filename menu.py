@@ -33,47 +33,42 @@ def iniciar():
             sol1.resolver()
 
         elif opcion == '2':
-            print("Buscando un cliente...\n")
-            dni = helpers.leer_texto(3, 3, "DNI (2 int y 1 char)").upper()
-            cliente = db.Clientes.buscar(dni)
-            print(cliente) if cliente else print("Cliente no encontrado.")
+            print("Enunciado del ejercicio 2...\n")
+            import sympy as sp
+            from Clase.ejercicio2 import Ecuacion2
+            x = sp.Symbol("x")
+            y = sp.Function("y")
+            
+            sol2 = Ecuacion2(x,y,a)
+            print(sol2)
+            sol2.resolver()
 
         elif opcion == '3':
-            print("Añadiendo un cliente...\n")
-
-            dni = None
-            while True:
-                dni = helpers.leer_texto(3, 3, "DNI (2 int y 1 char)").upper()
-                if helpers.dni_valido(dni, db.Clientes.lista):
-                    break
-
-            nombre = helpers.leer_texto(2, 30, "Nombre (de 2 a 30 chars)").capitalize()
-            apellido = helpers.leer_texto(2, 30, "Apellido (de 2 a 30 chars)").capitalize()
-            db.Clientes.crear(dni, nombre, apellido)
-            print("Cliente añadido correctamente.")
+            print("Enunciado del ejercicio 3...\n")
+            import sympy as sp
+            from Clase.ejercicio3 import Ecuacion3
+            x = sp.Symbol("x")
+            y = sp.Function("y")
+            
+            sol3 = Ecuacion3(x,y,a)
+            print(sol3)
+            sol3.resolver()
+            
 
         elif opcion == '4':
-            print("Modificando un cliente...\n")
-            dni = helpers.leer_texto(3, 3, "DNI (2 int y 1 char)").upper()
-            cliente = db.Clientes.buscar(dni)
-            if cliente:
-                nombre = helpers.leer_texto(
-                    2, 30, f"Nombre (de 2 a 30 chars) [{cliente.nombre}]").capitalize()
-                apellido = helpers.leer_texto(
-                    2, 30, f"Apellido (de 2 a 30 chars) [{cliente.apellido}]").capitalize()
-                db.Clientes.modificar(cliente.dni, nombre, apellido)
-                print("Cliente modificado correctamente.")
-            else:
-                print("Cliente no encontrado.")
+            print("Enunciado del ejercicio 4...\n")
+            import sympy as sp
+            from Clase.ejercicio4 import Ecuacion4
+            x = sp.Symbol("x")
+            y = sp.Function("y")
+            
+            sol4 = Ecuacion4(x,y,a)
+            print(sol4)
+            sol4.resolver()
 
+        
         elif opcion == '5':
-            print("Borrando un cliente...\n")
-            dni = helpers.leer_texto(3, 3, "DNI (2 int y 1 char)").upper()
-            print("Cliente borrado correctamente.") if db.Clientes.borrar(
-                dni) else print("Cliente no encontrado.")
-
-        elif opcion == '6':
-            print("Saliendo...\n")
+            print("Saliendo de la clase de ecuaciones...\n")
             break
 
         input("\nPresiona ENTER para continuar...")
