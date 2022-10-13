@@ -1,5 +1,4 @@
 import sympy as sp
-import math
 import pprint
 x = sp.Symbol("x")
 y = sp.Function("y")
@@ -22,12 +21,14 @@ class Ecuacion1:
     def resolver(self):
         
         solucion = sp.dsolve(a-self.ec1) #resolver ecuacion
-        print("Su solucion:",solucion)
+        print("Su solucion:")
+        sp.pprint(solucion)
         ics = {y(3): -1}
         cond_in = sp.Eq(solucion.lhs.subs(x, 3).subs(ics), solucion.rhs.subs(x, 3))
         print("Despejando la condicion inicial:", cond_in)
         resolucion = sp.solve(cond_in)
-        print("Resolviendo con la condicion inicial:",resolucion)
+        print("Resolviendo con la condicion inicial:")
+        sp.pprint(resolucion)
         
 sol1 = Ecuacion1(x,y,a)
 print(sol1)
@@ -48,12 +49,14 @@ class Ecuacion2:
     def resolver(self):
         
         solucion2 = sp.dsolve(a-self.ec2)
-        print("Su solucion:",solucion2)
+        print("Su solucion:")
+        sp.pprint(solucion2)
         ics = {y(sp.pi/2): sp.exp}
         cond_in = sp.Eq(solucion2.lhs.subs(x, 0).subs(ics), solucion2.rhs.subs(x, 0))
         print("Despejando la condicion inicial:", cond_in)
         resolucion = sp.solve(cond_in)
-        print("Resolviendo con la condicion inicial:",resolucion) 
+        print("Resolviendo con la condicion inicial:")
+        sp.pprint(resolucion) 
 
 sol2 = Ecuacion2(x,y,a)
 print(sol2)
@@ -74,7 +77,8 @@ class Ecuacion3():
     def resolver(self):
         
         solucion3 = sp.dsolve(a-self.ec3)
-        print("Su solucion:",solucion3)
+        print("Su solucion:")
+        sp.pprint(solucion3)
 
 sol3 = Ecuacion3(x,y,a)
 print(sol3)
@@ -95,7 +99,8 @@ class Ecuacion4:
     def resolver(self):
         
         solucion4 = sp.dsolve(a-self.ec4)
-        print("Su solucion:",solucion4)
+        print("Su solucion:")
+        sp.pprint(solucion4)
     
 sol4 = Ecuacion4(x,y,a)
 print(sol4)
