@@ -27,7 +27,3 @@ class Ecuacion2:
         resolucion = sp.solve(cond_in)
         print("Resolviendo con la condicion inicial:")
         sp.pprint(resolucion)
-        
-sol2 = Ecuacion2(x,y,a)
-print(sol2)
-sol2.resolver()

@@ -1,6 +1,5 @@
 import os
 import helpers
-import Clase.ejercicio as ej
 
 
 def iniciar():

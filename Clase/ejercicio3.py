@@ -21,7 +21,3 @@ class Ecuacion3():
         solucion3 = sp.dsolve(a-self.ec3)
         print("Su solucion:")
         sp.pprint(solucion3)
-
-sol3 = Ecuacion3(x,y,a)
-print(sol3)
-sol3.resolver()
