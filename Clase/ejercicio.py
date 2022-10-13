@@ -49,7 +49,7 @@ class Ecuacion2:
         
         solucion2 = sp.dsolve(a-self.ec2)
         print("Su solucion:",solucion2)
-        ics = {y(math.pi/2): math.e}
+        ics = {y(sp.pi/2): sp.exp}
         cond_in = sp.Eq(solucion2.lhs.subs(x, 0).subs(ics), solucion2.rhs.subs(x, 0))
         print("Despejando la condicion inicial:", cond_in)
         resolucion = sp.solve(cond_in)
